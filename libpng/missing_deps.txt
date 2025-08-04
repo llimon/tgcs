@@ -1,0 +1,7 @@
+checking pkg-config is at least version 0.9.0... yes
+checking for BASE_DEPENDENCIES... configure: error: Package requirements (glib-2.0 >= 2.12.0    atk >= 1.9.0    pango >= 1.12.0    cairo >= 1.2.0) were not met:
+
+Package 'atk', required by 'virtual:world', not found
+Package 'pango', required by 'virtual:world', not found
+Package 'cairo', required by 'virtual:world', not found
+

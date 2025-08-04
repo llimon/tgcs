@@ -1,0 +1,13 @@
+[hexedit]
+pkgname="${pkgprefix}${topdir}"
+name="$topdir - console hex editor"
+pkgcat="utilities"
+pkgvendor="https://github.com/pixel/hexedit"
+pkgdesc="Hexcode console editor by pixel"
+pkgver="$pkgver"
+files(-,root,bin)
+default_docs
+$_bindir/*
+$_sharedir/man/*
+#$_docdir/${topdir}-${version}/README.md
+#$_docdir/${topdir}-${version}/TODO
