@@ -53,7 +53,7 @@ prep()
 
 
     ${__gsed} -i 's|# DEFINES= -DSYSV -DSVR4|DEFINES= -DSYSV -DSVR4 -DOWTOOLKIT_WARNING_DISABLED|' Makefile
-    #${__gsed} -i 's|# LIBSUNOS5= -L${OPENWINHOME}/lib -lsocket -lnsl -lm|LIBSUNOS5= -L${OPENWINHOME}/lib -lsocket -lnsl -lm|' Makefile
+    #${__gsed} -i 's|# LIBSUNOS5= -L${OPENWINHOME}/lib -lsocket -lnsl -lm|LIBSUNOS5= -L${OPENWINHOME}/lib -R${OPENWINHOME}/lib -lsocket -lnsl -lm|' Makefile
     ${__gsed} -i 's|# LIBSUNOS5= -L${OPENWINHOME}/lib -lsocket -lnsl -lm|LIBSUNOS5=-L/usr/openwin/lib -R/usr/openwin/lib -lsocket -lnsl -lm|' Makefile
     ${__gsed} -i 's|# CC=gcc -g|CC=gcc|' Makefile
     ${__gsed} -i 's|CDEBUGFLAGS = -O -xF|CDEBUGFLAGS = -O -I/usr/openwin/include |' Makefile

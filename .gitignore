@@ -9,3 +9,7 @@
 **/meta/sums.*
 **/meta/files.*
 **/meta/prototype.*
+distfiles/*
+srcfiles/*
+distfiles
+srcfiles
