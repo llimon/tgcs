@@ -57,7 +57,7 @@ reg install
 install()
 {
     generic_install DESTDIR
-    doc README
+    #doc README
 }
 
 reg pack
