@@ -1,0 +1,11 @@
+[mxterm]
+pkgname="${pkgprefix}${topdir}"
+name="$topdir - Mxterm is a color xterm with motif widgets"
+pkgcat="application"
+pkgvendor="https://github.com/MagnetarRocket/Mxterm"
+pkgdesc="Mxterm is a color xterm with motif widgets"
+pkgver="$pkgver"
+files(-,root,bin)
+openwin/bin/*
+openwin/share/man/man1/*
+openwin/lib/X11/app-defaults/*
