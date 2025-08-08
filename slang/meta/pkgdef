@@ -1,0 +1,19 @@
+[slang]
+pkgname="${pkgprefix}${topdir}"
+name="$topdir -  It provides routines for embedding an interpreter for the S-Lang scripting language"
+pkgcat="application"
+pkgvendor="https://www.jedsoft.org/releases/slang"
+pkgdesc=" It provides routines for embedding an interpreter for the S-Lang scripting language, and components to facilitate the creation of text-based applications."
+pkgver="$pkgver"
+files(-,root,bin)
+default_docs
+$_bindir/*
+$_libdir/*
+#$_confdir/*
+$_sharedir/man/*
+$_sharedir/slsh/*
+$_docdir/slang/v2/*
+$_docdir/slang/html/*
+$_docdir/slsh/html/*
+etc/slsh.rc
+$_includedir/*
