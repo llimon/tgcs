@@ -35,11 +35,7 @@ prep()
 {
     generic_prep
     setdir source
-    ${__gsed} -i 's|^#! /bin/sh|#!/bin/bash|' configure
-    # Build with libidn2 instead of libidn
-    #${__gsed} -i 's/idna.h/idn2.h/' configure WWW/Library/Implementation/HTParse.c
-    #${__gsed} -i '/idn-free.h/d' configure WWW/Library/Implementation/HTParse.c
-    #${__gsed} -i 's/-lidn/-lidn2/' configure
+    ${__gsed} -i 's|^#! /bin/sh|#!/usr/tgcware/bin/bash|' configure
 
 }
 
