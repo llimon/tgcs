@@ -1,5 +1,5 @@
 [libtiff]
-pkgname="${pkgprefix}lib${topdir}"
+pkgname="${pkgprefix}l${topdir}"
 name="$topdir - software provides support for the Tag Image File Format (TIFF)"
 pkgcat="library"
 pkgvendor="https://download.gnome.org/sources/"

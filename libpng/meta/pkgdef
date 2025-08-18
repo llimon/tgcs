@@ -1,5 +1,5 @@
 [libpng]
-pkgname="${pkgprefix}${topdir}"
+pkgname="${pkgprefix}lipng"
 name="$topdir - libpng is the official PNG reference library."
 pkgcat="system"
 pkgvendor="https://download.gnome.org/sources/"
