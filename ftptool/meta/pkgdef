@@ -1,5 +1,5 @@
 [ftptool]
-pkgname="${pkgprefix}${topdir}"
+pkgname="${pkgprefix}$ftpt"
 name="$topdir - XView ftp browsing and download utility"
 pkgcat="utilities"
 pkgvendor="https://www.ibiblio.org/pub/X11/contrib/utilities/"
