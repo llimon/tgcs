@@ -56,14 +56,35 @@ check()
 reg install
 install()
 {
-   generic_install DESTDIR
-   doc README COPYRIGHT
+    clean stage
+    setdir source
+    ${__make} DESTDIR=$stagedir install
 
+    ${__mkdir} -p ${stagedir}/${_sysconfdir}/init.d
+    ${__mkdir} -p ${stagedir}/${_sysconfdir}/rc0.d
+    ${__mkdir} -p ${stagedir}/${_sysconfdir}/rc1.d
+    ${__mkdir} -p ${stagedir}/${_sysconfdir}/rc2.d
+    ${__mkdir} -p ${stagedir}/${_sysconfdir}/rcS.d
+    ${__mkdir} -p ${stagedir}${prefix}/${_sysconfdir}
+   
+    # Install initscript
+    ${__cp} $srcdir/ntpd.init ${stagedir}/${_sysconfdir}/init.d/tgcs_ntpd
+    ${__cp} $srcdir/ntp.conf ${stagedir}${prefix}/${_sysconfdir}/ntp.conf
+    chmod 755 ${stagedir}/${_sysconfdir}/init.d/tgcs_ntpd
+    (setdir ${stagedir}/${_sysconfdir}/rc0.d; ${__ln} -sf ../init.d/tgcs_ntpd K02tgcs_ntpd)
+    (setdir ${stagedir}/${_sysconfdir}/rc1.d; ${__ln} -sf ../init.d/tgcs_ntpd K02tgcs_ntpd)
+    (setdir ${stagedir}/${_sysconfdir}/rcS.d; ${__ln} -sf ../init.d/tgcs_ntpd K02tgcs_ntpd)
+    (setdir ${stagedir}/${_sysconfdir}/rc2.d; ${__ln} -sf ../init.d/tgcs_ntpd S98tgcs_ntpd)
+    custom_install=1
+    generic_install DESTDIR
+    doc README COPYRIGHT
 }
 
 reg pack
 pack()
 {
+    lprefix=${prefix#/*}
+    topinstalldir=/
     generic_pack
 }
 
