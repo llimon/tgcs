@@ -16,10 +16,13 @@ dir usr
 dir usr/tgcware
 ${_sysconfdir}/*/*tgcs_ntpd
 #
+files(644,root,sys)
+$lprefix/$_sysconfdir/ntp.conf
+$lprefix/$_sysconfdir/ntp.drift
+#
 files(-,root,bin)
 $lprefix/$_bindir
 $lprefix/$_sbindir
 $lprefix/$_libdir
 $lprefix/$_mandir
-$lprefix/$_sysconfdir/*
 $lprefix/$_docdir

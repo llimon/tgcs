@@ -70,6 +70,11 @@ install()
     ${__cp} $srcdir/ntpd.init ${stagedir}/${_sysconfdir}/init.d/tgcs_ntpd
     ${__cp} $srcdir/ntp.conf ${stagedir}${prefix}/${_sysconfdir}/ntp.conf
     chmod 755 ${stagedir}/${_sysconfdir}/init.d/tgcs_ntpd
+
+    # Create empty drift file for ntpd frequency tracking
+    touch ${stagedir}${prefix}/${_sysconfdir}/ntp.drift
+    chmod 644 ${stagedir}${prefix}/${_sysconfdir}/ntp.drift
+
     (setdir ${stagedir}/${_sysconfdir}/rc0.d; ${__ln} -sf ../init.d/tgcs_ntpd K02tgcs_ntpd)
     (setdir ${stagedir}/${_sysconfdir}/rc1.d; ${__ln} -sf ../init.d/tgcs_ntpd K02tgcs_ntpd)
     (setdir ${stagedir}/${_sysconfdir}/rcS.d; ${__ln} -sf ../init.d/tgcs_ntpd K02tgcs_ntpd)
