@@ -12,9 +12,9 @@ release_version="${version%p*}"  # Strips .6p5 -> 4.2
 
 pkgver=1
 
-source[0]=https://downloads.nwtime.org/ntp/${release_version}/${topdir}-${version}.tar.gz
+source[0]=https://downloads.nwtime.org/$topdir/${release_version}/${topdir}-${version}.tar.gz
 # If there are no patches, simply comment this
-#patch[0]=
+patch[0]=rfc2553.patch
 
 # Source function library
 . ${BUILDPKG_SCRIPTS}/buildpkg.functions
@@ -30,7 +30,6 @@ email="9660709+llimon@users.noreply.github.com"
 export CFLAGS="-I$prefix/include -O2 -mcpu=v7"
 export LDFLAGS="-L$prefix/lib -R$prefix/lib -lsocket -lnsl"
 ac_overrides="ac_cv_header_sys_timepps_h=no ac_cv_header_timepps_h=no"
-#topsrcdir=${topdir}-${version}
 configure_args+=(--disable-ipv6 --without-crypto --disable-all-clocks)
 
 #topsrcdir="${topdir}${version}"
